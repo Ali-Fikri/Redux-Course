@@ -1,12 +1,14 @@
-import './App.css'
+import React from "react";
+import Counter from "./components/Counter";
 
 function App() {
 
   return (
     <>
-      <h1>Redux App</h1>
+      <h2>Hello Redux</h2>
+      <Counter />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

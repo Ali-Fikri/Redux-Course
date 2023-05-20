@@ -12,14 +12,14 @@ export default function Counter() {
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    dispatch(incrementAction());
+    incrementAction(dispatch);
   };
   const handleDecrement = () => {
-    dispatch(decrementAction());
+    decrementAction(dispatch);
   };
 
   const handleIncByValue = (vl) => {
-    dispatch(incrementByValue(vl));
+    incrementByValue(vl, dispatch);
   };
 
   return (

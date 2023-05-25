@@ -1,25 +1,22 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  decrementAction,
-  incrementAction,
-  incrementByValue,
-} from "../app/actions/counterActions";
+
+import { increment, decrement, incrementByAmount } from "../redux/counterSlice";
 
 
 export default function Counter() {
-  const { count } = useSelector((state) => state);
+  const { count } = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    incrementAction(dispatch);
+    dispatch(increment());
   };
   const handleDecrement = () => {
-    decrementAction(dispatch);
+    dispatch(decrement())
   };
 
   const handleIncByValue = (vl) => {
-    incrementByValue(vl, dispatch);
+    dispatch(incrementByAmount(vl));
   };
 
   return (

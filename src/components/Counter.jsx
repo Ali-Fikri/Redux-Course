@@ -4,7 +4,7 @@ import {
   decrementAction,
   incrementAction,
   incrementByValue,
-} from "../redux/actions/counterActions";
+} from "../app/actions/counterActions";
 
 
 export default function Counter() {

@@ -1,5 +1,5 @@
 
-const Sidebar = () => {
+const Sidebar = ({ isChanged, name }) => {
   return (
     <aside className='sidebar'>
       <ul>
@@ -16,7 +16,7 @@ const Sidebar = () => {
           <a href="#">Blog</a>
         </li>
         <li>
-          <a href="#">Hello Hamza</a>
+          <a href="#">Hello {isChanged && name}</a>
         </li>
       </ul>
     </aside>

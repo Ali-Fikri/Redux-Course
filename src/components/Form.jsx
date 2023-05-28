@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addUser } from "../redux/userSlice";
+import { addUser } from "../redux/api";
+import { useSelector } from "react-redux";
 
 const Form = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
+  const { loading, error } = useSelector((state) => state.user);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addUser({ name, email }));
+    addUser({ name, email }, dispatch);
   };
 
   return (
@@ -32,9 +35,14 @@ const Form = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <div className="form-group">
-        <input type="submit" name="" placeholder="Add User" id="" />
-      </div>
+      {loading ? (
+        "Loading"
+      ) : (
+        <div className="form-group">
+          <input type="submit" name="" placeholder="Add User" id="" />
+        </div>
+      )}
+      {error && loading == false ? 'Error !!' : ''}
     </form>
   );
 };

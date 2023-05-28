@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const { name } = useSelector(state => state.user)
+  const { name } = useSelector(state => state.user.userData)
 
   return (
     <header className="header">

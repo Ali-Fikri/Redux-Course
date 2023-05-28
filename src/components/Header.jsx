@@ -1,9 +1,12 @@
+import { useSelector } from "react-redux";
 
-const Header = ({ name, isChanged }) => {
+const Header = () => {
+  const { name } = useSelector(state => state.user)
+
   return (
     <header className="header">
       <h1>Coderz Academy</h1>
-      <p>Hello {isChanged && name}</p>
+      <p>Hello {name}</p>
     </header>
   );
 };

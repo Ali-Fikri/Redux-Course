@@ -1,5 +1,8 @@
+import { useSelector } from "react-redux";
 
-const Sidebar = ({ isChanged, name }) => {
+const Sidebar = () => {
+  const { name } = useSelector(state => state.user)
+
   return (
     <aside className='sidebar'>
       <ul>
@@ -16,7 +19,7 @@ const Sidebar = ({ isChanged, name }) => {
           <a href="#">Blog</a>
         </li>
         <li>
-          <a href="#">Hello {isChanged && name}</a>
+          <a href="#">Hello { name }</a>
         </li>
       </ul>
     </aside>

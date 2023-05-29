@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addUser } from "../redux/api";
+import { addUser } from "../redux/userSlice";
 import { useSelector } from "react-redux";
 
 const Form = () => {
@@ -12,7 +12,7 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addUser({ name, email }, dispatch);
+    dispatch(addUser({ name, email }));
   };
 
   return (
